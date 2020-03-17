@@ -45,7 +45,8 @@ and make sure you have this in your configuration.
 ```
 USE_CUDNN := 1
 OPENCV_VERSION := 4
-PYTHON_INCLUDE := /usr/include/python3.6 /usr/lib/python3.6/dist-packages/numpy/core/include
+PYTHON_INCLUDE := /usr/include/python3.5 /usr/lib/python3.5/dist-packages/numpy/core/include
+PYTHON_LIBRARIES := boost_python3 python3.5m
 WITH_PYTHON_LAYER := 1 
 INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial
 LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/hdf5/serial
@@ -92,7 +93,7 @@ PYTHON_LIBRARIES ?= boost_python python2.7
 ```
 with this line
 ```
-PYTHON_LIBRARIES ?= boost_python3-py36
+PYTHON_LIBRARIES ?= boost_python3 python3.5m
 ```
 ## Step 8: Change CMakeLists.txt
 ```
@@ -133,16 +134,27 @@ $ source ~/.bashrc
 ## Common Problems
 For different OpenCV version, you might have different library. If something's missing from the library, you can remove it from LIBRARIES inside the Makefile.
 ## Libboost
+Checkout https://gist.github.com/melvincabatuan/a5a4a10b15ef31a5a481
 You might also need to build your own libboost.
 ```
 $ cd /usr/src
 $ wget --no-verbose https://dl.bintray.com/boostorg/release/1.65.1/source/boost_1_65_1.tar.gz
 $ tar xzf boost_1_65_1.tar.gz
-$ cd boost_1_65_1
-$ ln -s /usr/local/include/python3.6m /usr/local/include/python3.6
-$ ./bootstrap.sh --with-python=$(which python3)
-$ ./b2 install
-$ rm /usr/local/include/python3.6 && \
-$ ldconfig && \
-$ cd / && rm -rf /usr/src/*
+```
+You need to modify user-config.jam
+```
+$ gedit /usr/src/boost_1_65_1/tools/build/example/user-config.jam
+```
+Make sure you have this in user-config.jam.
+```
+# using python : 3.5 : /usr/bin/python3 : /usr/include/python3.5 : /usr/lib ;
+```
+Then, proceed
+```
+$ sudo ln -s /usr/local/include/python3.5m /usr/local/include/python3.5
+$ cd /usr/src/boost_1_65_1
+$ ./bootstrap.sh --with-python=/usr/local/bin/python3 --with-python-version=3.5 --with-python-root=/usr/local/lib/python3.5
+$ ./b2 --enable-unicode=ucs4 -j $(($(nproc) + 1)) toolset=gcc cxxflags="-std=c++11" install
+$ sudo ldconfig
+$ rm -rf /usr/src/*
 ```
