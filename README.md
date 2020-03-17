@@ -114,3 +114,5 @@ You need to open your .bashrc and add this PYTHONPATH.
 ```
 $ export PYTHONPATH=~/caffe/python:$PYTHONPATH 
 ```
+## Common Problems
+For different OpenCV version, you might have different library. If something's missing from the library, you can remove it from LIBRARIES inside the Makefile.
