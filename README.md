@@ -11,7 +11,12 @@ $ sudo apt-get install -y --no-install-recommends libboost-all-dev
 $ sudo apt-get install -y libgflags-dev libgoogle-glog-dev liblmdb-dev
 $ sudo apt-get install -y python3-dev
 $ sudo apt-get install -y python3-numpy python3-scipy
-$ sudo apt-get install libopencv-dev
+$ sudo apt-get install -y libopencv-dev
+$ sudo apt-get install -y python3-pip
+```
+Optionally, you can also install OpenCV for Python.
+```
+$ sudo pip3 install opencv-python
 ```
 ## Step 2: Clone Caffe
 ```
