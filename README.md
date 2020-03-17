@@ -78,7 +78,7 @@ NVCCFLAGS += -D_FORCE_INLINES -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)
 ```
 Replace this line
 ```
-LIBRARIES += glog gflags protobuf boost_system boost_filesystem m
+LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_hl hdf5
 ```
 with this line
 ```
