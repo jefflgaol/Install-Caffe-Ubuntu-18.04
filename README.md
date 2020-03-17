@@ -1,5 +1,5 @@
 # Install-Caffe-Ubuntu-18.04
-## Step 1: Install prequisites
+## Step 1: Install prerequisites
 You need to install CUDA 10.0 and cuDNN first.
 ```
 $ sudo apt-get update
@@ -117,6 +117,10 @@ $ gedit ~/.bashrc
 and add this
 ```
 export PYTHONPATH=~/caffe/python:$PYTHONPATH 
+```
+and don't forget to
+```
+$ source ~/.bashrc
 ```
 ## Common Problems
 For different OpenCV version, you might have different library. If something's missing from the library, you can remove it from LIBRARIES inside the Makefile.
