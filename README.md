@@ -23,8 +23,8 @@ $ sudo pip3 install opencv-python
 $ cd ~
 $ git clone https://github.com/BVLC/caffe.git
 ```
-## Step 3: Modify
-Modify blocking_queue.cpp.
+## Step 3: Modify blocking_queue.cpp
+You need to modify blocking_queue.cpp.
 ```
 $ gedit ~/caffe/src/caffe/util/blocking_queue.cpp
 ```
@@ -41,7 +41,7 @@ Open Makefile.config
 ```
 $ gedit ~/caffe/Makefile.config
 ```
-and make sure you have this in your configuration.
+and make sure you have this in your configuration
 ```
 USE_CUDNN := 1
 OPENCV_VERSION := 4
@@ -59,7 +59,7 @@ CUDA_ARCH := -gencode arch=compute_30,code=sm_30 \
     -gencode arch=compute_61,code=sm_61 \
     -gencode arch=compute_61,code=compute_61
 ```
-## Step 6: Solve HDF5
+## Step 6: Symlink HDF5
 ```
 $ cd /usr/lib/x86_64-linux-gnu
 $ sudo ln -s libhdf5_serial.so.8.0.2 libhdf5.so
@@ -135,7 +135,7 @@ $ source ~/.bashrc
 For different OpenCV version, you might have different library. If something's missing from the library, you can remove it from LIBRARIES inside the Makefile.
 ## Libboost
 Checkout https://gist.github.com/melvincabatuan/a5a4a10b15ef31a5a481
-You might also need to build your own libboost.
+If necessary, you can also build your own Boost.
 ```
 $ cd /usr/src
 $ wget --no-verbose https://dl.bintray.com/boostorg/release/1.65.1/source/boost_1_65_1.tar.gz
@@ -145,7 +145,7 @@ You need to modify user-config.jam
 ```
 $ gedit /usr/src/boost_1_65_1/tools/build/example/user-config.jam
 ```
-Make sure you have this in user-config.jam.
+Make sure you have this configuration
 ```
 # using python : 3.5 : /usr/bin/python3 : /usr/include/python3.5 : /usr/lib ;
 ```
