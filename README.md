@@ -92,7 +92,7 @@ PYTHON_LIBRARIES ?= boost_python python2.7
 ```
 with this line
 ```
-PYTHON_LIBRARIES ?= boost_python python3.6
+PYTHON_LIBRARIES ?= boost_python3-py36
 ```
 ## Step 8: Change CMakeLists.txt
 ```
@@ -132,3 +132,17 @@ $ source ~/.bashrc
 ```
 ## Common Problems
 For different OpenCV version, you might have different library. If something's missing from the library, you can remove it from LIBRARIES inside the Makefile.
+## Libboost
+You might also need to build your own libboost.
+```
+$ cd /usr/src
+$ wget --no-verbose https://dl.bintray.com/boostorg/release/1.65.1/source/boost_1_65_1.tar.gz
+$ tar xzf boost_1_65_1.tar.gz
+$ cd boost_1_65_1
+$ ln -s /usr/local/include/python3.6m /usr/local/include/python3.6
+$ ./bootstrap.sh --with-python=$(which python3)
+$ ./b2 install
+$ rm /usr/local/include/python3.6 && \
+$ ldconfig && \
+$ cd / && rm -rf /usr/src/*
+```
