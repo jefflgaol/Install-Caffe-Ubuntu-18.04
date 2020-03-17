@@ -86,6 +86,14 @@ LIBRARIES += glog gflags protobuf leveldb snappy \
     lmdb boost_system boost_filesystem hdf5_hl hdf5 m \
     opencv_core opencv_highgui opencv_imgproc opencv_imgcodecs opencv_videoio
 ```
+Replace this line
+```
+PYTHON_LIBRARIES ?= boost_python python2.7
+```
+with this line
+```
+PYTHON_LIBRARIES ?= boost_python python3.6
+```
 ## Step 8: Change CMakeLists.txt
 ```
 $ gedit ~/caffe/CMakeLists.txt
