@@ -40,7 +40,7 @@ and make sure you have this in your configuration.
 ```
 USE_CUDNN := 1
 OPENCV_VERSION := 4
-PYTHON_INCLUDE := /usr/include/python2.7 /usr/lib/python2.7/dist-packages/numpy/core/include
+PYTHON_INCLUDE := /usr/include/python3.6 /usr/lib/python3.6/dist-packages/numpy/core/include
 WITH_PYTHON_LAYER := 1 
 INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial
 LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/hdf5/serial
