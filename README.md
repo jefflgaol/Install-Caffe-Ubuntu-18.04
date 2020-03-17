@@ -104,15 +104,19 @@ $ for req in $(cat requirements.txt); do sudo -H pip3 install $req --upgrade; do
 ```
 $ cd ~/caffe
 $ make all -j $(($(nproc) + 1))
-$ make test
-$ make runtest
-$ make pycaffe
-$ make distribute
+$ make test -j $(($(nproc) + 1))
+$ make runtest -j $(($(nproc) + 1))
+$ make pycaffe -j $(($(nproc) + 1))
+$ make distribute -j $(($(nproc) + 1))
 ```
 ## Step 11: Add PYTHONPATH
-You need to open your .bashrc and add this PYTHONPATH.
+You need to open your .bashrc
 ```
-$ export PYTHONPATH=~/caffe/python:$PYTHONPATH 
+$ gedit ~/.bashrc
+```
+and add this
+```
+export PYTHONPATH=~/caffe/python:$PYTHONPATH 
 ```
 ## Common Problems
 For different OpenCV version, you might have different library. If something's missing from the library, you can remove it from LIBRARIES inside the Makefile.
