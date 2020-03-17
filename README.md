@@ -98,7 +98,7 @@ set(${CMAKE_CXX_FLAGS} "-D_FORCE_INLINES ${CMAKE_CXX_FLAGS}")
 ## Step 9: Install Python requirements
 ```
 $ cd ~/caffe/python
-$ for req in $(cat requirements.txt); do sudo -H pip install $req --upgrade; done
+$ for req in $(cat requirements.txt); do sudo -H pip3 install $req --upgrade; done
 ```
 ## Step 10: Make your Caffe
 ```
