@@ -13,6 +13,8 @@ $ sudo apt-get install -y python3-dev
 $ sudo apt-get install -y python3-numpy python3-scipy
 $ sudo apt-get install -y libopencv-dev
 $ sudo apt-get install -y python3-pip
+$ sudo apt-get install libopenblas-dev
+$ sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
 $ cd /usr/lib/x86_64-linux-gnu
 $ sudo ln -s libboost_python-py35.so libboost_python3.so
 ```
