@@ -89,7 +89,7 @@ with this line
 ```
 LIBRARIES += glog gflags protobuf leveldb snappy \
     lmdb boost_system boost_filesystem hdf5_hl hdf5 m \
-    opencv_core opencv_highgui opencv_imgproc opencv_imgcodecs opencv_videoio
+    opencv_core opencv_highgui opencv_imgproc opencv_imgcodecs opencv_videoio boost_regex
 ```
 Replace this line
 ```
