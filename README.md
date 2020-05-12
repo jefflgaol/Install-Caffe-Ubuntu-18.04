@@ -139,24 +139,23 @@ For different OpenCV version, you might have different library. If something's m
 Checkout https://gist.github.com/melvincabatuan/a5a4a10b15ef31a5a481
 If necessary, you can also build your own Boost.
 ```
-$ cd /usr/src
+$ cd ~
 $ wget --no-verbose https://dl.bintray.com/boostorg/release/1.65.1/source/boost_1_65_1.tar.gz
 $ tar xzf boost_1_65_1.tar.gz
 ```
 You need to modify user-config.jam
 ```
-$ gedit /usr/src/boost_1_65_1/tools/build/example/user-config.jam
+$ gedit ~/boost_1_65_1/tools/build/example/user-config.jam
 ```
-Make sure you have this configuration
+Make sure you have this configuration (at the very bottom)
 ```
-# using python : 3.5 : /usr/bin/python3 : /usr/include/python3.5 : /usr/lib ;
+# using python : 3.5 : /usr/local/bin/python3 : /usr/local/include/python3.5m : /usr/local/lib ;
 ```
 Then, proceed
 ```
 $ sudo ln -s /usr/local/include/python3.5m /usr/local/include/python3.5
-$ cd /usr/src/boost_1_65_1
+$ cd ~
 $ ./bootstrap.sh --with-python=/usr/local/bin/python3 --with-python-version=3.5 --with-python-root=/usr/local/lib/python3.5
-$ ./b2 --enable-unicode=ucs4 -j $(($(nproc) + 1)) toolset=gcc cxxflags="-std=c++11" install
+$ sudo ./b2 --enable-unicode=ucs4 -j $(($(nproc) + 1)) toolset=gcc cxxflags="-std=c++11" install
 $ sudo ldconfig
-$ rm -rf /usr/src/*
 ```
