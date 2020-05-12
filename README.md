@@ -73,7 +73,7 @@ $ gedit ~/caffe/Makefile
 ```
 Replace this line
 ```
-$ NVCCFLAGS += -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)
+NVCCFLAGS += -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)
 ```
 with this one
 ```
