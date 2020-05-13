@@ -136,10 +136,9 @@ and don't forget to
 $ source ~/.bashrc
 ```
 ## Common Problems
-For different OpenCV version, you might have different library. If something's missing from the library, you can remove it from LIBRARIES inside the Makefile.
-## Libboost
+### Libboost
+If you have problem with boost installation, you might also need to build your own Boost.
 Checkout https://gist.github.com/melvincabatuan/a5a4a10b15ef31a5a481
-If necessary, you can also build your own Boost.
 ```
 $ cd ~
 $ wget --no-verbose https://dl.bintray.com/boostorg/release/1.65.1/source/boost_1_65_1.tar.gz
@@ -156,7 +155,7 @@ Make sure you have this configuration (at the very bottom)
 Then, proceed
 ```
 $ sudo ln -s /usr/local/include/python3.5m /usr/local/include/python3.5
-$ cd ~
+$ cd ~/boost_1_65_1
 $ ./bootstrap.sh --with-python=/usr/local/bin/python3 --with-python-version=3.5 --with-python-root=/usr/local/lib/python3.5
 $ sudo ./b2 --enable-unicode=ucs4 -j $(($(nproc) + 1)) toolset=gcc cxxflags="-std=c++11" install
 $ sudo ldconfig
