@@ -48,7 +48,7 @@ $ gedit ~/caffe/Makefile.config
 and make sure you have this in your configuration
 ```
 USE_CUDNN := 1
-OPENCV_VERSION := 4
+OPENCV_VERSION := 3
 PYTHON_LIBRARIES := boost_python3 python3.5m
 PYTHON_INCLUDE := /usr/include/python3.5 /usr/lib/python3.5/dist-packages/numpy/core/include
 WITH_PYTHON_LAYER := 1 
