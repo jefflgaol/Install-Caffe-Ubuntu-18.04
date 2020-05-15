@@ -163,6 +163,7 @@ $ sudo ldconfig
 ### fatal error: caffe/proto/caffe.pb.h: No such file or directory
 Checkout https://github.com/NVIDIA/DIGITS/issues/105
 ```
+$ cd ~/caffe
 $ protoc src/caffe/proto/caffe.proto --cpp_out=.
 $ mkdir include/caffe/proto
 $ mv src/caffe/proto/caffe.pb.h include/caffe/proto
