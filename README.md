@@ -161,3 +161,10 @@ $ ./bootstrap.sh --with-python=/usr/local/bin/python3 --with-python-version=3.5 
 $ sudo ./b2 --enable-unicode=ucs4 -j $(($(nproc) + 1)) toolset=gcc cxxflags="-std=c++11" install
 $ sudo ldconfig
 ```
+### fatal error: caffe/proto/caffe.pb.h: No such file or directory
+Checkout https://github.com/NVIDIA/DIGITS/issues/105
+```
+$ protoc src/caffe/proto/caffe.proto --cpp_out=.
+$ mkdir include/caffe/proto
+$ mv src/caffe/proto/caffe.pb.h include/caffe/proto
+```
