@@ -168,3 +168,8 @@ $ protoc src/caffe/proto/caffe.proto --cpp_out=.
 $ mkdir include/caffe/proto
 $ mv src/caffe/proto/caffe.pb.h include/caffe/proto
 ```
+### Check failed: a <= b (0 vs. -1.19209e-07)
+Inside math_functions.cpp, try to comment this line:
+```
+CHECK_LE(a, b);
+```
