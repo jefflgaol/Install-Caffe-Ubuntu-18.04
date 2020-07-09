@@ -173,3 +173,5 @@ Inside math_functions.cpp, try to comment this line:
 ```
 CHECK_LE(a, b);
 ```
+### Could not open or find file examples/images/cat.jpg
+You need to download "examples" from the original repository of Caffe.
