@@ -1,6 +1,6 @@
 # Install-Caffe-Ubuntu-18.04
 ## Step 1: Install prerequisites
-You need to install CUDA 10.0 and cuDNN first.
+You need to install CUDA 10.0 and cuDNN first before continue.
 ```
 $ sudo apt-get update
 $ sudo apt-get upgrade
